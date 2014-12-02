@@ -71,7 +71,7 @@
     labT.backgroundColor = [UIColor clearColor];
     NSArray *array = [self.navigationController viewControllers];
 
-    labT.text = [NSString stringWithFormat:@"Test Title %i", [array count]];
+    labT.text = [NSString stringWithFormat:@"Test Title %lu", (unsigned long)[array count]];
     self.labTitle  = labT;
     [midView addSubview:self.labTitle];
     
@@ -100,6 +100,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     NSArray *array = [self.navigationController viewControllers];
     if ([array count] == 1) {
         self.btnLeft.hidden = YES;
