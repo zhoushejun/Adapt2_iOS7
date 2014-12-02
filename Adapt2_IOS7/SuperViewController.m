@@ -100,6 +100,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
     NSArray *array = [self.navigationController viewControllers];
     if ([array count] == 1) {
         self.btnLeft.hidden = YES;
